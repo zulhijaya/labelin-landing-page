@@ -10,11 +10,11 @@
     }
 
     nav {
-        @apply  px-5 lg:px-40 max-w-[1536px] mx-auto
+        @apply  px-6 sm:px-10 lg:px-40 max-w-[1536px] mx-auto
     }
 
     section {
-        @apply px-6 lg:px-40 py-20 max-w-[1536px] mx-auto
+        @apply px-6 sm:px-10 lg:px-40 py-20 max-w-[1536px] mx-auto
     }
 
     h1 {
