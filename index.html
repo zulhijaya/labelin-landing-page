@@ -9,37 +9,40 @@
     <link rel="stylesheet" href="/dist/output.css">
 </head>
 <body>
-    <nav class="sticky top-0 bg-white border-b py-4 lg:py-6 shadow-sm z-50">
-        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-            <div class="flex items-center justify-between">
-                <img src="assets/img/Labelin Logo.png" alt="Logo" class="w-36">
-                <button type="button" onclick="openMenu()" class="lg:hidden focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="fill-secondary hover:fill-gray-900 w-6 h-6">
-                        <path fill-rule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm8.25 5.25a.75.75 0 01.75-.75h8.25a.75.75 0 010 1.5H12a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
-                    </svg>
-                </button>
+    <!-- Header -->
+    <div class="sticky top-0 bg-white border-b py-4 lg:py-6 shadow-sm z-50">
+        <nav>
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                <div class="flex items-center justify-between">
+                    <img src="assets/img/Labelin Logo.png" alt="Logo" class="w-36">
+                    <button type="button" onclick="openMenu()" class="lg:hidden focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="fill-secondary hover:fill-gray-900 w-6 h-6">
+                            <path fill-rule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm8.25 5.25a.75.75 0 01.75-.75h8.25a.75.75 0 010 1.5H12a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+                <div id="menu" class="menu">
+                    <ul class="flex flex-col lg:flex-row lg:space-x-10 space-y-3 lg:space-y-0 font-medium text-gray-600 pt-6 lg:pt-0">
+                        <li class="active">
+                            <a href="#">Beranda</a>
+                        </li>
+                        <li>
+                            <a href="#">Produk</a>
+                        </li>
+                        <li>
+                            <a href="#">API Integrasi</a>
+                        </li>
+                        <li>
+                            <a href="#">Tentang</a>
+                        </li>
+                        <li>
+                            <a href="#">Kontak</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div id="menu" class="menu">
-                <ul class="flex flex-col md:flex-row lg:space-x-10 space-y-3 lg:space-y-0 font-medium text-gray-600 pt-6 lg:pt-0">
-                    <li class="active">
-                        <a href="#">Beranda</a>
-                    </li>
-                    <li>
-                        <a href="#">Produk</a>
-                    </li>
-                    <li>
-                        <a href="#">API Integrasi</a>
-                    </li>
-                    <li>
-                        <a href="#">Tentang</a>
-                    </li>
-                    <li>
-                        <a href="#">Kontak</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 
     <!-- Lindungi Produk Anda -->
     <section>
@@ -51,7 +54,7 @@
                 </div>
                 <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0">
                     <button class="btn-primary">Konsultasi Sekarang</button>
-                    <button class="btn-light">
+                    <button onclick="openVideoModal()" class="btn-light">
                         <div class="flex items-center justify-center md:justify-start space-x-3">
                             <div>Tentang Kami</div>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -66,6 +69,30 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal Video Labelin -->
+    <div id="video-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50" onclick="openVideoModal()">
+        <section>
+            <div class="flex items-center justify-center h-full">
+                <div class="bg-white p-4 md:p-8 rounded-2xl w-full md:w-4/5" onclick="event.stopPropagation();
+                ">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="mb-0">SecureTag - Labelin.co</h3>
+                        <button type="button" class="focus:outline-none" onclick="openVideoModal()">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="text-secondary hover:text-gray-900 w-6 h-6">
+                                <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                    <video class="w-full" controls>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Autentikasi Digital Berbasis Cloud -->
     <section class="my-0 py-0">
@@ -146,28 +173,201 @@
         </div>
     </section>
 
-    <section class="bg-quaternary max-w-none my-20">
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y space-y-10 md:space-y-0 max-w-6xl mx-auto">
-            <div class="basis-6/12">
-                <div>
-                    <h2 class="mb-5">Kepercayaan Produk Dijamin oleh SecureTag</h2>
-                    <p class="leading-relaxed">Kami menjamin autentikasi produk secata instan. Melalui ketertelusuran di tingkat unit melalui smartphone, tanpa perlu mengunduh aplikasi terpisah.</p>
+    <!-- Produk Terbaik Kami -->
+    <div class="bg-quaternary my-20">
+        <section>
+            <h2 class="text-center">Produk Terbaik Kami</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-8">
+                <div class="rounded-xl" style="box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.05);">
+                    <img src="assets/img/hologram/2D.png" alt="2D Hologram" class="rounded-t-xl">
+                    <div class="py-6">
+                        <p class="text-center text-lg">2D Hologram</p>
+                    </div>
+                </div>
+                <div class="rounded-xl" style="box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.05);">
+                    <img src="assets/img/hologram/3D.png" alt="3D Hologram" class="rounded-t-xl">
+                    <div class="py-6">
+                        <p class="text-center text-lg">3D Hologram</p>
+                    </div>
+                </div>
+                <div class="rounded-xl" style="box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.05);">
+                    <img src="assets/img/hologram/Numbering.png" alt="Numbering Hologram" class="rounded-t-xl">
+                    <div class="py-6">
+                        <p class="text-center text-lg">Numbering Hologram</p>
+                    </div>
+                </div>
+                <div class="rounded-xl" style="box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.05);">
+                    <img src="assets/img/hologram/Printed.png" alt="Printed Hologram" class="rounded-t-xl">
+                    <div class="py-6">
+                        <p class="text-center text-lg">Printed Hologram</p>
+                    </div>
+                </div>
+                <div class="rounded-xl" style="box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.05);">
+                    <img src="assets/img/hologram/Barcode.png" alt="Barcode Hologram" class="rounded-t-xl">
+                    <div class="py-6">
+                        <p class="text-center text-lg">Barcode Hologram</p>
+                    </div>
+                </div>
+                <div class="rounded-xl" style="box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.05);">
+                    <img src="assets/img/hologram/Demetallic.png" alt="Demetallic Hologram" class="rounded-t-xl">
+                    <div class="py-6">
+                        <p class="text-center text-lg">Demetallic Hologram</p>
+                    </div>
+                </div>
+                <div class="rounded-xl" style="box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.05);">
+                    <img src="assets/img/hologram/QR Code.png" alt="QR Code Hologram" class="rounded-t-xl">
+                    <div class="py-6">
+                        <p class="text-center text-lg">QR Code Hologram</p>
+                    </div>
+                </div>
+                <div class="rounded-xl" style="box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.05);">
+                    <img src="assets/img/hologram/Scratched.png" alt="Scratched Hologram" class="rounded-t-xl">
+                    <div class="py-6">
+                        <p class="text-center text-lg">Scratched Hologram</p>
+                    </div>
                 </div>
             </div>
-            <div class="basis-5/12">
-                <div class="flex items-center justify-between md:justify-around">
-                    <div>
-                        <p class="mb-4">Product Release</p>
-                        <h2 class="text-5xl md:text-6xl text-primary mb-0">1500+</h2>
+        </section>
+    </div>
+
+    <!-- Kualitas Material Hologram -->
+    <div class="relative bg-primary my-20 py-20 lg:py-40">
+        <div class="absolute left-0 bottom-0">
+            <img src="assets/img/Ellipse Kiri.png" alt="Ellipse Kiri" class="w-72">
+        </div>
+        <div class="absolute right-0 top-0">
+            <img src="assets/img/Ellipse Kanan.png" alt="Ellipse Kanan" class="w-[40rem]">
+        </div>
+        <div class="relative max-w-full mx-auto py-8 pl-6 sm:pl-10 lg:pl-40">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-10 md:space-y-0">
+                <div class="flex-none md:mr-10 lg:mr-32">
+                    <div class="md:w-72 pr-6 sm:pr-10 md:pr-0">
+                        <h2 class="text-white mb-5">Kualitas Material Hologram</h2>
+                        <p class="text-white text-lg leading-relaxed">Kami memiliki berbagai macam kualitas material terbaik dalam pembutan hologram</p>
                     </div>
-                    <div>
-                        <p class="mb-4">Satisfied Customer</p>
-                        <h2 class="text-5xl md:text-6xl text-primary mb-0">2M</h2>
+                </div>
+                <div class="md:relative w-full">
+                    <div class="md:absolute md:inset-0 flex items-center">
+                        <div class="flex space-x-4 md:space-x-8 snap-x overflow-x-auto scrollbar-hide font-medium pr-6 sm:pr-10 lg:pr-40">
+                            <div class="snap-start flex-none w-56 lg:w-80 rounded-xl" style="box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.05);">
+                                <img src="assets/img/material/Custom Logo Destroyed.png" alt="Custom Logo Destroyed Material" class="rounded-t-xl">
+                                <div class="bg-white py-6 rounded-b-xl">
+                                    <p class="text-center text-lg">Custom Logo Destroyed Material</p>
+                                </div>
+                            </div>
+                            <div class="snap-start flex-none w-56 lg:w-80 rounded-xl" style="box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.05);">
+                                <img src="assets/img/material/Hologram Stamping Oil.png" alt="Hologram Stamping Oil" class="rounded-t-xl">
+                                <div class="bg-white py-6 rounded-b-xl">
+                                    <p class="text-center text-lg">Hologram Stamping Oil</p>
+                                </div>
+                            </div>
+                            <div class="snap-start flex-none w-56 lg:w-80 rounded-xl" style="box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.05);">
+                                <img src="assets/img/material/Transparent.png" alt="Transparent Material" class="rounded-t-xl">
+                                <div class="bg-white py-6 rounded-b-xl">
+                                    <p class="text-center text-lg">Transparent Material</p>
+                                </div>
+                            </div>
+                            <div class="snap-start flex-none w-56 lg:w-80 rounded-xl" style="box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.05);">
+                                <img src="assets/img/material/Honeycom Destroyed.png" alt="Honeycom Destroyed Material" class="rounded-t-xl">
+                                <div class="bg-white py-6 rounded-b-xl">
+                                    <p class="text-center text-lg">Honeycom Destroyed Material</p>
+                                </div>
+                            </div>
+                            <div class="snap-start flex-none w-56 lg:w-80 rounded-xl" style="box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.05);">
+                                <img src="assets/img/material/Non-Destroyed.png" alt="Non-Destroyed Material" class="rounded-t-xl">
+                                <div class="bg-white py-6 rounded-b-xl">
+                                    <p class="text-center text-lg">Non-Destroyed Material</p>
+                                </div>
+                            </div>
+                            <div class="snap-start flex-none w-56 lg:w-80 rounded-xl" style="box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.05);">
+                                <img src="assets/img/material/One Time Used.png" alt="One Time Used Material" class="rounded-t-xl">
+                                <div class="bg-white py-6 rounded-b-xl">
+                                    <p class="text-center text-lg">One Time Used Material</p>
+                                </div>
+                            </div>
+                            <div class="snap-start flex-none w-56 lg:w-80 rounded-xl" style="box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.05);">
+                                <img src="assets/img/material/Tamper Void.png" alt="Tamper Void Material" class="rounded-t-xl">
+                                <div class="bg-white py-6 rounded-b-xl">
+                                    <p class="text-center text-lg">Tamper Void Material</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Keunggulan Produk Kami -->
+    <section>
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between md:space-x-40 space-y space-y-10 md:space-y-0">
+            <div class="md:flex-none">
+                <img src="assets/img/Icon Keunggulan.png" alt="Keunggulan Kami" class="w-28 mx-auto md:mx-0 mb-4">
+                <h2 class="hidden md:block mb-0">Keunggulan <br> Produk Kami</h2>
+                <h2 class="md:hidden text-center mb-0">Keunggulan Produk Kami</h2>
+            </div>
+            <div class="flex-1">
+                <ul class="space-y-4">
+                    <li class="flex items-start space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="flex-none fill-primary w-7 h-7">
+                            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                        </svg>
+                        <div class="text-lg">Produsen dapat dengan mudah mendeteksi pemalsuan</div>
+                    </li>
+                    <li class="flex items-start space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="flex-none fill-primary w-7 h-7">
+                            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                        </svg>
+                        <div class="text-lg">Produsen dapat melakukan peblokiran produk melalui serial number</div>
+                    </li>
+                    <li class="flex items-start space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="flex-none fill-primary w-7 h-7">
+                            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                        </svg>
+                        <div class="text-lg">Produsen dapat mendeteksi wilayah edar produk</div>
+                    </li>
+                    <li class="flex items-start space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="flex-none fill-primary w-7 h-7">
+                            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                        </svg>
+                        <div class="text-lg">Kontrol penuh tambah dan perbaharui konten video, gambar produk, link sosmed secara real time dan tambah fitur loyalty program. Meskipun produkmu sudah tersebar.</div>
+                    </li>
+                    <li class="flex items-start space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="flex-none fill-primary w-7 h-7">
+                            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                        </svg>
+                        <div class="text-lg">Dapatkan feedback dari customer Anda yang tersimpan secara daring, pahami customer behavior untuk meningkatkan performa perusahaan melalui layanan dasboard.</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </section>
+
+    <!-- Kepercayaan Produk Terjamin -->
+    <div class="bg-quaternary my-20">
+        <section>
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y space-y-10 md:space-y-0">
+                <div class="basis-6/12">
+                    <div>
+                        <h2 class="mb-5">Kepercayaan Produk Dijamin oleh SecureTag</h2>
+                        <p class="leading-relaxed">Kami menjamin autentikasi produk secata instan. Melalui ketertelusuran di tingkat unit melalui smartphone, tanpa perlu mengunduh aplikasi terpisah.</p>
+                    </div>
+                </div>
+                <div class="basis-5/12">
+                    <div class="flex items-center justify-between md:justify-around">
+                        <div>
+                            <p class="mb-4">Product Release</p>
+                            <h2 class="text-5xl md:text-6xl text-primary mb-0">1500+</h2>
+                        </div>
+                        <div>
+                            <p class="mb-4">Satisfied Customer</p>
+                            <h2 class="text-5xl md:text-6xl text-primary mb-0">2M</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Cara menggunakan SecureTag -->
     <section>

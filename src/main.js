@@ -7,6 +7,11 @@ const openMenu = () => {
     }
 }
 
+const openVideoModal = () => {
+    const modal = document.getElementById('video-modal')
+    modal.classList.toggle('hidden')
+}
+
 let acc = document.getElementsByClassName('accordion');
 let i;
 
